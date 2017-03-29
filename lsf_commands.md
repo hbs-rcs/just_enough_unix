@@ -1,16 +1,19 @@
+## LSF Commands
 
-# Know that where relevant, one can select / filter jobs by the following:
+Know that where relevant, one can select / filter jobs by the following:
 
--q QUEUE_NAME
--s STATE 
--J JOB_NAME
--g JOB_GROUP
--m HOST_NAME
--app APP_PROFILE
+-q QUEUE_NAME<br>
+-s STATE<br>
+-J JOB_NAME<br>
+-g JOB_GROUP<br>
+-m HOST_NAME<br>
+-app APP_PROFILE<br>
 
-Wrappers vs Custom Job Submission
+### Wrappers vs Custom Job Submission
 HBS compute grid uses bash scripts to facilitate easy job submission and compute grid utilization.
-Submitting a Job
+
+### Submitting a Job
+```bash
 bsub myjob.sh
 bsub rsync -av ~/project/plan_B /export/projects/plan_B
 
@@ -65,4 +68,4 @@ Information on Jobs, finished and unfinished
 bhist JOB_ID
 # finished and unfinished
 bhist -a 
-
+```
