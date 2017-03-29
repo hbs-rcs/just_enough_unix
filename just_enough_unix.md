@@ -9,7 +9,7 @@
 * [Working with files and directories](#working_with_files)
 * [Handling large numbers of files](#handling_large_numbers)
 * [Customizing your work environment](#customizing_environment)
-* Unix on the HBS compute grid 
+* [Unix on the HBS compute grid](lsf_commands.md)
 
 **NOTE: Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
 **NOTE #2: Most of this material is a mashup of my previous work done at
