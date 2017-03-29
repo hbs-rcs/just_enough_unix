@@ -13,7 +13,7 @@ resources.
 
 **Installation Instructions**
 Not painful for Mac and Linux users. A bit more involved for PC users.
-Please see our [Installation Instructions]() document.
+Please see our [Installation Instructions](installation.md) document.
 
 
 **Lesson Materials**

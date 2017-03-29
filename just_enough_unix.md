@@ -12,15 +12,7 @@
 * [Unix on the HBS compute grid](lsf_commands.md)
 * [Things we won't hit -- For Further Study!](#further_study)
 
-**NOTE:**     Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
-**NOTE #2:**  Most of this material is a mashup of my previous work done at
-[FASRC Tips & Tricks](https://rc.fas.harvard.edu/wp-content/uploads/2015/03/UnixtricksandTextProcessing.pdf), and work from 
-Harvard Informatics [Basic Unix](http://informatics.fas.harvard.edu/basic-unix-workshop.html)
-and [Tips & Tricks](http://informatics.fas.harvard.edu/unix-command-line-tips-and-tricks.html),
-[Software Carpentry](http://swcarpentry.github.io/shell-novice/reference/), and
-[Programming Historian](http://programminghistorian.org/lessons/intro-to-bash).
-
-**For Intermediate Users**, please see my [FASRC Tips & Tricks](https://rc.fas.harvard.edu/wp-content/uploads/2015/03/UnixtricksandTextProcessing.pdf) document.
+**NOTE:**  Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
 
 
 <a name="intro"></a>
