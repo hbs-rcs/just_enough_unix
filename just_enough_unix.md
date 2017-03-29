@@ -1,5 +1,5 @@
 ## Just Enough Unix
-**Wed 29-Mar-2017**
+**Wed 29-Mar-2017**<br>
 **Cotting House, Rm 107, HBS**
 
 
@@ -10,9 +10,10 @@
 * [Handling large numbers of files](#handling_large_numbers)
 * [Customizing your work environment](#customizing_environment)
 * [Unix on the HBS compute grid](lsf_commands.md)
+* [Things we won't hit -- For Further Study!](#further_study)
 
-**NOTE:     Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
-**NOTE #2:  Most of this material is a mashup of my previous work done at
+**NOTE:**     Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
+**NOTE #2:**  Most of this material is a mashup of my previous work done at
 [FASRC Tips & Tricks](https://rc.fas.harvard.edu/wp-content/uploads/2015/03/UnixtricksandTextProcessing.pdf), and work from 
 Harvard Informatics [Basic Unix](http://informatics.fas.harvard.edu/basic-unix-workshop.html)
 and [Tips & Tricks](http://informatics.fas.harvard.edu/unix-command-line-tips-and-tricks.html),
@@ -341,6 +342,7 @@ export PS1="\[\033[1;36m\][\$(date +%T), \u@\h: \W]$\[\033[0m\] "
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ```
 
+<a name="further_study"></a>
 ### Things we won't hit:
 
 #### Miscellaneous commands
