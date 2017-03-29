@@ -1,4 +1,4 @@
-##Just Enough Unix
+## Just Enough Unix
 **Wed 29-Mar-2017**
 **Cotting House, Rm 107, HBS**
 
@@ -11,13 +11,16 @@
 * [Customizing your work environment](#customizing_environment)
 * [Unix on the HBS compute grid](lsf_commands.md)
 
-**NOTE: Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
-**NOTE #2: Most of this material is a mashup of my previous work done at
+**NOTE:     Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
+**NOTE #2:  Most of this material is a mashup of my previous work done at
 [FASRC Tips & Tricks](https://rc.fas.harvard.edu/wp-content/uploads/2015/03/UnixtricksandTextProcessing.pdf), and work from 
 Harvard Informatics [Basic Unix](http://informatics.fas.harvard.edu/basic-unix-workshop.html)
 and [Tips & Tricks](http://informatics.fas.harvard.edu/unix-command-line-tips-and-tricks.html),
 [Software Carpentry](http://swcarpentry.github.io/shell-novice/reference/), and
 [Programming Historian](http://programminghistorian.org/lessons/intro-to-bash).
+
+**For Intermediate Users**, please see my [FASRC Tips & Tricks](https://rc.fas.harvard.edu/wp-content/uploads/2015/03/UnixtricksandTextProcessing.pdf) document.
+
 
 <a name="intro"></a>
 ### Introduction & Overview of our services
@@ -338,7 +341,9 @@ export PS1="\[\033[1;36m\][\$(date +%T), \u@\h: \W]$\[\033[0m\] "
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ```
 
-# Things we won't hit:
+### Things we won't hit:
+
+#### Miscellaneous commands
 wc -l   word count (lines)
 |       chaining unix commands with piping
 [ab]    match either a or b in filenames
@@ -347,7 +352,7 @@ $(cmd)  insert output from cmd in place
 --help  see if command has help screen
 --version   see if command will tell you its version
 
-# Line control and Navigation
+#### Line control and Navigation
 Left and right arrow keys   Move the cursor left and right
 Ctrl-d  Delete character under cursor
 Ctrl-a  Move to the beginning of the line
@@ -356,20 +361,20 @@ Up arrow    Previous command (you can go through the whole command history this 
 Down arrow  Next command
 Ctrl-k  Delete from cursor to the end of the line
 
-# Still useful but less commonly used keystrokes
+#### Still useful but less commonly used keystrokes
 Ctrl-w  Delete to beginning of word
 Ctrl-r  Search for most recent command containing
 Ctrl-xx Move between current cursor position and beginning of line
 # You can combine these together. For instance a useful one is Ctrl-a Ctrl-k which goes to the beginning of the line and deletes it.
 
-# Command Control Shortcuts
+#### Command Control Shortcuts
 Ctrl-s  Stop the output to the screen
 Ctrl-q  Continue the output to the screen
 Ctrl-c  Kill the currently running command
 Ctrl-z  Suspend the currently running command (follow by bg to push into the background)
 Ctrl-l  Clears the screen (Useful if your terminal fills up and becomes confusing
 
-# Command History
+#### Command History
 !!      Run last command
 !mycmd  Run the most recent command that starts with mycmd (e.g. !cd)
 !mycmd:p    Print out the command that !mycmd would run (also adds it as the latest command in the command history)
