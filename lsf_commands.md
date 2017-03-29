@@ -57,6 +57,7 @@ bresume -J JOB_NAME
 
 ### Information on Jobs
 
+```bash
 # bjobs: Currently unfinished or < 1-hr finished
 # 
 # simple
@@ -81,6 +82,7 @@ bjobs -r
 bjobs -sum
 # resource use info
 bjobs -W
+
 
 # bhist: Currently unfinished or past (anytime) finished/exited
 #
@@ -132,4 +134,4 @@ bjobs -l -u all | grep -E "User|g>|IDLE|MAX"
 
 ## can format this more nicely using awk to piece out data from each line
 ```
-```
+

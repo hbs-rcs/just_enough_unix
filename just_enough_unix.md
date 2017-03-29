@@ -338,6 +338,7 @@ export PS1="\[\033[1;36m\][\$(date +%T), \u@\h: \W]$\[\033[0m\] "
 ### Things we won't hit:
 
 #### Miscellaneous commands
+```bash
 wc -l   word count (lines)<br>
 |       chaining unix commands with piping<br>
 [ab]    match either a or b in filenames<br>
@@ -345,8 +346,10 @@ wc -l   word count (lines)<br>
 $(cmd)  insert output from cmd in place<br>
 --help  see if command has help screen<br>
 --version   see if command will tell you its version<br>
+```
 
 #### Line control and Navigation
+```bash
 Left and right arrow keys   Move the cursor left and right<br>
 Ctrl-d  Delete character under cursor<br>
 Ctrl-a  Move to the beginning of the line<br>
@@ -354,22 +357,28 @@ Ctrl-e  Move to the end of the line<br>
 Up arrow    Previous command (you can go through the whole command history this way)<br>
 Down arrow  Next command<br>
 Ctrl-k  Delete from cursor to the end of the line<br>
+```
 <br>
 #### Still useful but less commonly used keystrokes
+```bash
 Ctrl-w  Delete to beginning of word<br>
 Ctrl-r  Search for most recent command containing<br>
 Ctrl-xx Move between current cursor position and beginning of line<br>
 # You can combine these together. For instance a useful one is Ctrl-a Ctrl-k which goes to the beginning of the line and deletes it.<br>
+```
 
 #### Command Control Shortcuts
+```bash
 Ctrl-s  Stop the output to the screen<br>
 Ctrl-q  Continue the output to the screen<br>
 Ctrl-c  Kill the currently running command<br>
 Ctrl-z  Suspend the currently running command (follow by bg to push into the background)<br>
 Ctrl-l  Clears the screen (Useful if your terminal fills up and becomes confusing<br>
+```
 
 #### Command History
+```bash
 !!      Run last command<br>
 !mycmd  Run the most recent command that starts with mycmd (e.g. !cd)<br>
 !mycmd:p    Print out the command that !mycmd would run (also adds it as the latest command in the command history)<br>
-
+```
