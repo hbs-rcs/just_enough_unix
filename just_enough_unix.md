@@ -6,7 +6,7 @@
 ### TOC
 * [Introduction & Overview of our services](#intro)
 * [Navigating directories](#navigating)
-* Working with files 
+* Working with files and directories
 * Handling large #s of files 
 * Customizing your work environment 
 * Unix on the HBS compute grid 
@@ -136,3 +136,17 @@ man ls
 
 
 ```
+
+
+mkdir
+cp
+rmdir
+rm
+mv
+
+cat
+head
+tail
+less
+
+scp
