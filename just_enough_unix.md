@@ -258,6 +258,7 @@ done
 
 # secure copy uses the format scp username@server:remotefile localfile
 scp -v rfreeman@researchgrid:~/.bashrc ~/.bashrc_remote
+
 # and back the other way
 scp -v ~/.bashrc rfreeman@researchgrid:~/.bashrc_laptop
 
@@ -268,8 +269,10 @@ scp -r rfreeman@researchgrid:~/src ~/src_remote
 # using rsync, best cmd-line tool for large copy jobs. Pay attention to final slashes
 rsync -av folder1 folder2/	# copy folder1 and subs into folder2/ (optional on destination)
 rsync -av folder1/ folder2/	# copy folder1 contents into folder2/
+
 # copy folder1 and subs to folder2 on remote server
 rsync -av folder1 rfreeman@researchgrid:folder2
+
 # copying files to regal w/ new datestamps
 rsync -a --no-times --size-only --progress folder1 /export/projects/myfolder/mysubdir
 ```
