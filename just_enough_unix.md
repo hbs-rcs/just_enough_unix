@@ -358,7 +358,7 @@ Up arrow    Previous command (you can go through the whole command history this 
 Down arrow  Next command<br>
 Ctrl-k  Delete from cursor to the end of the line<br>
 ```
-<br>
+
 #### Still useful but less commonly used keystrokes
 ```bash
 Ctrl-w  Delete to beginning of word<br>
