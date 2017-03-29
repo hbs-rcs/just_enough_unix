@@ -16,20 +16,20 @@ Seems complicated, but the steps are short and easy:
 1. Download the Git for Windows installer from https://git-for-windows.github.io/.
 2. Run the installer and follow the steps below:
     1. Click on "Next".
-    * Click on "Next".
-    * Keep "Use Git from the Windows Command Prompt" selected and click on "Next". If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
-    * Click on "Next".
-    * Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
-    * Keep "Use Windows' default console window" selected and click on "Next".
-    * Click on "Install".
-    * Click on "Finish".
+    2. Click on "Next".
+    3. Keep "Use Git from the Windows Command Prompt" selected and click on "Next". If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
+    4. Click on "Next".
+    5. Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
+    6. Keep "Use Windows' default console window" selected and click on "Next".
+    7. Click on "Install".
+    8. Click on "Finish".
 3. If your "HOME" environment variable is not set (or you don't know what this is):
-  * Open command prompt (Open Start Menu then type cmd and press [Enter])
-  * Type the following line into the command prompt window exactly as shown:<br>
+    1. Open command prompt (Open Start Menu then type cmd and press [Enter])
+    2. Type the following line into the command prompt window exactly as shown:<br>
          `setx HOME "%USERPROFILE%"`<br>
  
-  * Press [Enter], you should see SUCCESS: Specified value was saved.
-  * Quit command prompt by typing exit then pressing [Enter]
+    3. Press [Enter], you should see SUCCESS: Specified value was saved.
+    4. Quit command prompt by typing exit then pressing [Enter]
  
 To verify that you've installed this correctly, double-click on the Git Bash icon on your Desktop (if you missed or forgot this option, Git > Git Bash should be in Programs section of your Start menu or search for 'git bash'). A window should open up and display something like
 
