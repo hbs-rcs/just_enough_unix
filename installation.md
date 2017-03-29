@@ -15,7 +15,7 @@ For PC folks, I recommend that you download and install [Git for Windows](https:
 Seems complicated, but the steps are short and easy:
 1. Download the Git for Windows installer from https://git-for-windows.github.io/.
 2. Run the installer and follow the steps below:
-  * Click on "Next".
+    * Click on "Next".
   * Click on "Next".
   * Keep "Use Git from the Windows Command Prompt" selected and click on "Next". If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
   * Click on "Next".
