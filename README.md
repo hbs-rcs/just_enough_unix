@@ -11,6 +11,7 @@ navigating directories, handling large numbers of files, customizing your
 environment to work more efficiently, and interacting with the HBS compute grid
 resources.
 
+
 **Installation Instructions**
 Not painful for Mac and Linux users. A bit more involved for PC users.
 Please see our [Installation Instructions](installation.md) document.
@@ -19,6 +20,7 @@ Please see our [Installation Instructions](installation.md) document.
 **Lesson Materials**
 * [Just Enough Unix](just_enough_unix.md)
 * [LSF Commands](lsf_commands.md)
+
 
 **Attribution**
 Most of this material is a mashup of my previous work done at
