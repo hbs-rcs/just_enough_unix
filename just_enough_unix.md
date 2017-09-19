@@ -68,14 +68,16 @@ ls -l /Users/$USER
 /Users/rfreeman/
 [rfreeman@rfreeman-mbp: ~]$
 
-# Moving around: We need to be able to move about the filesystem. The main command for this is cd (change directory). 
-# 
-# Commands Format:
+
+# COMMANDS FORMAT:
+#
 # cd LOCATION
 # ls [options] PATHNAME
 # pushd DIRNAME
 # pwd
 # popd
+
+# Moving around: We need to be able to move about the filesystem. The main command for this is cd (change directory). 
 
 cd /Users
 # this takes you back to 'home'
@@ -139,8 +141,10 @@ man ls
 
 <a name="working_with_files"></a>
 ### Working with files and directories
-# 
-# Commands Format:
+
+```bash
+# COMMANDS FORMAT:
+#
 # mkdir [options] DIRNAME
 # rmdir [options] DIRNAME
 # cp [options] SOURCE [SOURCE] DESTINATION
@@ -153,7 +157,6 @@ man ls
 # grep [options] PATTERN [PATHNAME ...]
 
 
-```bash
 # create directories with mkdir (make directory)
 cd ~
 mkdir somedir
