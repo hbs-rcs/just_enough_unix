@@ -282,6 +282,10 @@ done
 
 ## Tranferring files
 
+# Command Format:
+# scp [options] [username@host:]PATHNAME [username@host:]PATHNAME
+# rsync [options] [username@host:]PATHNAME [username@host:]PATHNAME
+
 # best way is either scp (secure copy) or rsync (remote sync)
 #   the latter can still be done locally -- it could be all on a local machine
 
