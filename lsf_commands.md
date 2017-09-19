@@ -127,11 +127,18 @@ bjobs -w -u all | awk -F '[[:space:]]+' '{print $2}' | sort | uniq -c | wc -l
 #   one job
 bjobs -l 143971 | grep -E "User|g>|IDLE|MAX"
 
+# what does their job data look like?
 #   one user
 bjobs -l -u cpoliquin | grep -E "g>|IDLE|MAX"
 
+# what does their job data look like?
 #   all users
 bjobs -l -u all | grep -E "User|g>|IDLE|MAX"
+
+# what does historic job info look like?
+#   for myself
+bhist -a -S 2017/09/01, -l | grep -E "User|g>|MAX"
+
 
 ## can format this more nicely using awk to piece out data from each line
 ```

@@ -69,6 +69,14 @@ ls -l /Users/$USER
 [rfreeman@rfreeman-mbp: ~]$
 
 # Moving around: We need to be able to move about the filesystem. The main command for this is cd (change directory). 
+# 
+# Commands Format:
+# cd LOCATION
+# ls [options] PATHNAME
+# pushd DIRNAME
+# pwd
+# popd
+
 cd /Users
 # this takes you back to 'home'
 cd ~
@@ -84,6 +92,7 @@ cd ./Desktop
 cd ~/Desktop
 # double-period means go up one directory
 cd ../rfreeman/Desktop
+
 
 # Finally, pushd and popd allow you to hop from one place to another while remembering
 #  (or forgetting) where you are / have been:
@@ -130,6 +139,19 @@ man ls
 
 <a name="working_with_files"></a>
 ### Working with files and directories
+# 
+# Commands Format:
+# mkdir [options] DIRNAME
+# rmdir [options] DIRNAME
+# cp [options] SOURCE [SOURCE] DESTINATION
+# mv [options] SOURCE [SOURCE] DESTINATION
+# rm [options] 
+# cat [PATHNAME ...]
+# head [options] [PATHNAME ...]
+# tail [options] [PATHNAME ...]
+# less|more [options] [PATHNAME]
+# grep [options] PATTERN [PATHNAME ...]
+
 
 ```bash
 # create directories with mkdir (make directory)
