@@ -5,7 +5,7 @@
 
 ### TOC
 * [Introduction & Overview of our services](#intro)
-* [Navigating directories](#navigating)
+* [The Filesystem and Navigating directories](#navigating)
 * [Working with files and directories](#working_with_files)
 * [Handling large numbers of files](#handling_large_numbers)
 * [Customizing your work environment](#customizing_environment)
@@ -31,12 +31,19 @@ FILE=/var/tmp/rcs_services.pdf; \
 
 #### Why the shell?
 * A shell is a program whose primary purpose is to read commands and run other programs.
-* The shell’s main advantages are its high action-to-keystroke ratio, its support for automating repetitive tasks, and that it can be used to access networked machines.
-* The shell’s main disadvantages are its primarily textual nature and how cryptic its commands and operation can be.
+* The shell’s main advantages are 
+  * its high action-to-keystroke ratio
+  * ability to chain simple programs to make larger programs
+  * its support for automating repetitive tasks, and
+  * it can be used to access networked machines (e.g. AWS or a remote compute cluster)
+* The shell’s main disadvantages are its primarily textual nature and how cryptic its commands and operations can be.
 
 
 <a name="navigating"></a>
-### Navigating directories
+### The Filesystem and Navigating directories
+
+An overview of the Unix/Linux filesystem: <br>
+![An example Unix filesystem](/images/home-directories.svg)
 
 ```bash
 # Your home directory is where you land when you first log in or open up the Terminal program.

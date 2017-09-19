@@ -92,10 +92,11 @@ bhist -l JOB_ID
 
 # all or from a specific date range, or to now
 bhist -a 
-bhist -a -D 2017/02/06      # only that day
-bhist -a -D 2017/02         # only that month
-bhist -a -D 2017/02/06,2017/03/06   # the range
-bhist -a -D 2017/02/06,     # then to now
+bhist -a -S 2017/02/06      # only that day
+bhist -a -S 2017/02         # only that month
+bhist -a -S 2017/02/06,2017/03/06   # the range
+bhist -a -S 2017/02/06,     # then to now
+bhist -a -S 2017/02/06, -l  # then to now, long format
 
 
 # bacct: accounting (resource use) information on one or more jobs
