@@ -4,24 +4,30 @@
 
 
 ### TOC
-* [Introduction & Overview of our services](#intro)
-* [The Filesystem and Navigating directories](#navigating)
-* [Working with files and directories](#working_with_files)
-* [Handling large numbers of files](#handling_large_numbers)
-* [Customizing your work environment](#customizing_environment)
-* [Unix on the HBS compute grid](lsf_commands.md)
-* [Things we won't hit -- For Further Study!](#further_study)
+* [Introduction & Overview of RCS Services](#intro)
+* [Why the Shell?](#why_shell)
+* [Basics & Getting Help](#basics_help)
+* [The Filesystem and Navigation](#navigating)
+* [Working with Files and Directories](#working_with_files)
+* [Finding Things](#finding)
+* [Transferring Files](#transferring)
+* [Handling Large Numbers of Files](#handling_large_numbers)
+* [Customizing your Work Environment](#customizing_environment)
+* [Unix on the HBS Compute Grid](lsf_commands.md)
+* [Things We Won't Hit (For Further Study!)](#further_study)
 
 **NOTE:**  Materials for this seminar can be found at [http://bit.ly/bbs_unix](http://bit.ly/bbs_unix)<br>
 
 
 <a name="intro"></a>
 ### Introduction & Overview of our services
+
+A few small toy examples, philosophical, and practical:
+
 ```bash
 # at the unix command line 
 whoami 
 
- 
 # URL for public PDF on RCS Services
 # http://training.rcs.hbs.org/files/rcs_services.pdf
 FILE=/var/tmp/rcs_services.pdf; \
@@ -29,7 +35,9 @@ FILE=/var/tmp/rcs_services.pdf; \
   open -a "Adobe Acrobat" $FILE
 ```
 
-#### Why the shell?
+<a name="why_shell"></a>
+### Why the shell?
+
 * A shell is a program whose primary purpose is to read commands and run other programs.
 * The shell’s main advantages are 
   * its high action-to-keystroke ratio
@@ -38,12 +46,80 @@ FILE=/var/tmp/rcs_services.pdf; \
   * it can be used to access networked machines (e.g. AWS or a remote compute cluster)
 * The shell’s main disadvantages are its primarily textual nature and how cryptic its commands and operations can be.
 
+<a name="basics_help"></a>
+### Basics and Getting Help
+
+Unix's Read-Evaluate-Print Loop (REPL) is great for its simplicity, but challenging for new users. Using Unix follows some basics. 
+
+**Command format:** Commands almost always start with the command itself (sometimes cryptic, as memory was expensive 40+ years ago!), optionally followed by options, and optionally followed by parameters, or things for the command to act on. Fo example:
+
+```bash
+# command only: change directory
+cd
+# command + option: list current directory long format
+ls -dl
+# command + parameter: show the top of a file (default # of lines)
+head somefile.txt
+# command + options + parameter: show the top 2 lines of a file
+head -n 2 somefile.txt
+```
+
+Options can be short (dash + one letter) or long (double-dash + option name). If short, these can be combined to save typing:
+```bash
+ls -a           # list everything
+ls -a -l        # list everything + long format
+ls -al          # same, but combined
+ls --all        # long command option format
+ls --all -l     # both formats together
+```
+
+**Command Response**: Unix will respond in one of three ways: Nothing, a result, or a warning message:
+```bash
+# OK, but nothing printed back
+cd ~
+# OK, and something printed back
+ls 
+# NOT OK, with some error message
+cd some/crazy/directory/structure
+```
+
+**Undoing Things**: Unix is not very forgiving. So, if you find that you are stuck, the system is not responding, or you wish to back out of something, there are two approaches:
+* `Contrl-c` (`Ctrl-c`): Cancel, quit, or make it stop! This simultaneous keypress will usually get you out of most things. Use it when the system isn't responding, you're not sure you wish to use a command, or things just don't seem right.
+* `q` (lowercase `q`): In certain programs called pagers, a colon (`:`) appears at the bottom left corner. Here, the system is trying to show you info, one page at-a-time. `Ctrl-c` won't work here. `q` for quit to the rescue!
+
+**Getting Help**: This perhaps is most important, to maintain one's sanity and promote self-sufficiency. There are several sensible help options: built-in help in short format, built-in help with long format, the online manual, an cross-reference index:
+
+```bash
+# short format
+grep -h
+# longer format
+grep --Help
+# looking at the command manual
+# NB! man uses a pager, showing info one page at a time. So Ctrl-c won't get you out. Useful keys:
+#     <space> move forward one page
+#        b    move back one page
+#      <ret>  move forward one line
+#        ?    help
+man grep
+# cross-reference all command and functions
+apropos grep
+```
+
+And, of course, if this turns up empty, there is always Google!
+
 
 <a name="navigating"></a>
-### The Filesystem and Navigating directories
+### The Filesystem and Navigation
 
-An overview of the Unix/Linux filesystem: <br>
-![An example Unix filesystem](/images/home-directories.svg)
+```bash
+# COMMANDS FORMAT:
+#
+# cd DIRNAME
+# ls [options] PATHNAME
+# pushd DIRNAME
+# pwd
+# popd
+```
 
 ```bash
 # Your home directory is where you land when you first log in or open up the Terminal program.
@@ -53,7 +129,12 @@ An overview of the Unix/Linux filesystem: <br>
 #
 # The prompt '$' means that Unix is waiting for you to type something in.
 [rfreeman@rfreeman-mbp: ~]$ 
+```
 
+An example Unix/Linux filesystem (exact names my vary!): <br>
+![An example Unix filesystem](/images/home-directories.svg)
+
+```bash
 # Directory Structure: Like windows and macs unix filesystems are divided into
 #   directories in a hierarchical fashion. Directories are separated by a forward slash (/)
 #   and all files hang off a single top-level directory called root (written as /).
@@ -69,16 +150,9 @@ ls -l /Users/$USER
 [rfreeman@rfreeman-mbp: ~]$
 
 
-# COMMANDS FORMAT:
-#
-# cd LOCATION
-# ls [options] PATHNAME
-# pushd DIRNAME
-# pwd
-# popd
+# Moving Around
 
-# Moving around: We need to be able to move about the filesystem. The main command for this is cd (change directory). 
-
+# We need to be able to move about the filesystem. The main command for this is cd (change directory). 
 cd /Users
 # this takes you back to 'home'
 cd ~
@@ -111,6 +185,7 @@ pwd
 popd
 pwd
 
+
 # Listing Files
 
 ## Saw this command in action briefly earlier. Used for listing files in a directory
@@ -140,7 +215,7 @@ man ls
 ```
 
 <a name="working_with_files"></a>
-### Working with files and directories
+### Working with Files and Directories
 
 ```bash
 # COMMANDS FORMAT:
@@ -154,8 +229,10 @@ man ls
 # head [options] [PATHNAME ...]
 # tail [options] [PATHNAME ...]
 # less|more [options] [PATHNAME]
-# grep [options] PATTERN [PATHNAME ...]
+```
 
+```bash
+# Create Directories
 
 # create directories with mkdir (make directory)
 cd ~
@@ -171,6 +248,8 @@ rmdir newdir/nodir
 rmdir newdir
 
 
+# Copying Files
+
 # copying (cp) and moving/renaming (mv) files
 #   this has the standard format of cp/mv source [source] destination
 #   if using multiple sources, the destination must be a directory
@@ -183,6 +262,9 @@ cp file1 file2 dir1/
 cp folder1/* dir1/
 cp -R folder1/ dir1/
 
+
+# Move / Rename Files
+
 # rename a file, just move it someplace else, or move & rename
 mv file1 file2
 mv file1 dir1/
@@ -190,6 +272,9 @@ mv file1 dir1/file2
 # move a folder, or a bunch of things
 mv folder1/ folder2/
 mv *.txt folder1/ textfiledir/
+
+
+# Delete Files
 
 # let's delete stuff:
 #   remove one or more files
@@ -199,7 +284,8 @@ rm file1 file2
 rm folder1/
 rm -rf folder1/
 
-## Looking at files & their contents
+
+# Looking at File Contents
 
 # Show the contents of a file by concatenating (cat) it
 cat file1
@@ -224,11 +310,28 @@ tail -n 5 !$
 # but if we wish to look thru the file one page at a time:
 #   use space to advance by page, b for back, ret for one line, q for quit, ? for help
 less specific_order.txt
+```
 
-# finally, what everybody loves... searching inside files with grep
+<a name="finding"></a>
+### Finding Things
+
+```bash
+# COMMANDS FORMAT:
+#
+# grep [options] PATTERN [PATHNAME ...]
+# find [options] LOCATION DIRECTIVE
+```
+
+```bash
+# Finding text inside files
+
+# finally, what everybody loves: searching inside files... with grep!
+#
+# let's download a sample file first, from Software Carpentry's Unix lesson
+# (http://swcarpentry.github.io/shell-novice)
+wget -O haiku.txt http://bit.ly/swc_haiku 
+
 #   let's look at some haiku
-cd ~/Desktop
-cd data-shell/writing
 cat haiku.txt
 #  now find the word not (use !$ or tab-complete)
 grep not !$
@@ -249,49 +352,40 @@ grep -c The haiku.txt
 grep -E "^The" !$
 
 
+# Finding file themselves
+
+# find all text files from current directory and below
+find . -name *.txt
+# repeat same, but ignore case of filenames
+find . -iname *.txt
+
+# find only files
+find . -type f
+# find only directories
+find . -type d
+# find all files that start with letter 'a'
+find . -type f -name a*
+
+# find all files in my home directory and below modified yesterday (1 day or less)
+find ~ -type f -mtime -1  
+
 ```
 
-<a name="handling_large_numbers"></a>
-### Handling Large Numbers of Files
+<a name="transferring"></a>
+## Tranferring Files
+
+The best way is either `scp` (secure copy) or `rsync` (remote sync). The latter can 
+still be done locally -- it could be all on a local machine, local + remote, or remote
+to remote! See our [Copying Files](http://grid.rcs.hbs.org/copying-files-0) document on
+our compute grid website.
+
 ```bash
-
-## Listing directories with too many files (>1K - 2K). Unbearable > 5K
-#     this next one will fail as file count passes 5K
-ls -al
-ls -1    # only asks for name, nothing else
-
-# Let's try a loop
-mkdir a/ b/
-for file in a*.txt; do
-    echo $file
-    mv $file a/
-done
-for file in b*.txt; do
-    echo $file
-    mv $file b/
-done
-
-# let's try this more efficiently
-find . -iname "a*.txt" -type f -exec mv -v {} a/ \;
-
-# what about renaming them? or making a copy with a new name?
-for file in *.txt; do
-    echo $file
-    # next line removes the last .suffix
-    cp $file ${file%.*}.copy.txt
-    # or better...
-    cp $file ${file%.*}.copy.${file##*.}
-done
-
-## Tranferring files
-
 # Command Format:
 # scp [options] [username@host:]PATHNAME [username@host:]PATHNAME
 # rsync [options] [username@host:]PATHNAME [username@host:]PATHNAME
+```
 
-# best way is either scp (secure copy) or rsync (remote sync)
-#   the latter can still be done locally -- it could be all on a local machine
-
+```bash
 # secure copy uses the format scp username@server:remotefile localfile
 scp -v rfreeman@researchgrid:~/.bashrc ~/.bashrc_remote
 
@@ -313,6 +407,47 @@ rsync -av folder1 rfreeman@researchgrid:folder2
 rsync -a --no-times --size-only --progress folder1 /export/projects/myfolder/mysubdir
 ```
 
+
+<a name="handling_large_numbers"></a>
+### Handling Large Numbers of Files
+
+Some brief, helpful examples of things that you might find yourself needing to do around
+handling large numbers of files.
+
+```bash
+
+## Listing directories with too many files (>1K - 2K). Unbearable > 5K
+#     this next one will fail as file count passes 5K
+ls -al   # this asks for name and all metadata, slowing down getting the listing
+ls -1    # only asks for name, nothing else
+
+# Let's try a loop
+touch afile1.txt afile2.txt bfile1.txt bfile2.txt
+mkdir a/ b/
+
+for file in a*.txt; do
+    echo $file
+    mv $file a/
+done
+
+for file in b*.txt; do
+    echo $file
+    mv $file b/
+done
+
+# let's try this more efficiently
+find . -iname "a*.txt" -type f -exec mv -v {} a/ \;
+
+# what about renaming them? or making a copy with a new name?
+for file in *.txt; do
+    echo $file
+    # next line removes the last .suffix
+    cp $file ${file%.*}.copy.txt
+    # or better...
+    cp $file ${file%.*}.copy.${file##*.}
+done
+
+
 <a name="customizing_environment"></a>
 ### Customizing your Environment
 
@@ -330,17 +465,20 @@ cat .bash_profile
 #   use ctrl (^) characters to eXit, Write out, etc. while in nano
 nano .bash_profile
 
-.bash_profile -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#-= .bash_profile -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 # Source global definitions if this file exists
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#-= end .bash_profile -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 
 # OK, and now for our .bashrc...
-#
 
-.bashrc -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#-= .bashrc -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -370,11 +508,11 @@ export PATH=$HOME/bin:$PATH
 
 export PS1="\[\033[1;36m\][\$(date +%T), \u@\h: \W]$\[\033[0m\] "
 
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#-= end .bash_profile -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ```
 
 <a name="further_study"></a>
-### Things we won't hit:
+### Things We Won't Hit (For Further Study)
 
 #### Miscellaneous commands
 ```bash
