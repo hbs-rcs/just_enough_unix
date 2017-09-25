@@ -1,9 +1,9 @@
 ## Just Enough Unix
-**Wed 29-Mar-2017**<br>
-**Cotting House, Rm 107, HBS**
 
+Although this appears lengthy, it is solely due to the number of examples we give
+to help you through this early learning period. 
 
-### TOC
+## TOC
 * [Introduction & Overview of RCS Services](#intro)
 * [Why the Shell?](#why_shell)
 * [Basics & Getting Help](#basics_help)
@@ -514,7 +514,7 @@ export PS1="\[\033[1;36m\][\$(date +%T), \u@\h: \W]$\[\033[0m\] "
 <a name="further_study"></a>
 ### Things We Won't Hit (For Further Study)
 
-#### Miscellaneous commands
+#### Miscellaneous Commands
 ```bash
 wc -l   word count (lines)<br>
 |       chaining unix commands with piping<br>
@@ -525,7 +525,7 @@ $(cmd)  insert output from cmd in place<br>
 --version   see if command will tell you its version<br>
 ```
 
-#### Line control and Navigation
+#### Line Control and Navigation
 ```bash
 Left and right arrow keys   Move the cursor left and right<br>
 Ctrl-d  Delete character under cursor<br>
@@ -536,7 +536,7 @@ Down arrow  Next command<br>
 Ctrl-k  Delete from cursor to the end of the line<br>
 ```
 
-#### Still useful but less commonly used keystrokes
+#### Still Useful but Less Commonly Used Keystrokes
 ```bash
 Ctrl-w  Delete to beginning of word<br>
 Ctrl-r  Search for most recent command containing<br>
