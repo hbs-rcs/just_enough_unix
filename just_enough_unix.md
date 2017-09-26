@@ -111,9 +111,8 @@ And, of course, if this turns up empty, there is always Google!
 <a name="navigating"></a>
 ### The Filesystem and Navigation
 
+#### Commands Format
 ```bash
-# COMMANDS FORMAT:
-#
 # cd DIRNAME
 # ls [options] PATHNAME
 # pushd DIRNAME
@@ -121,6 +120,7 @@ And, of course, if this turns up empty, there is always Google!
 # popd
 ```
 
+#### Getting going
 ```bash
 # Your home directory is where you land when you first log in or open up the Terminal program.
 #   Usually you see your home folder name. This might not be true on the compute grid. We'll
@@ -148,10 +148,11 @@ ls -l /Users/$USER
 [rfreeman@rfreeman-mbp: ~]$ pwd
 /Users/rfreeman/
 [rfreeman@rfreeman-mbp: ~]$
+````
 
+#### Moving around
 
-# Moving Around
-
+```bash
 # We need to be able to move about the filesystem. The main command for this is cd (change directory). 
 cd /Users
 # this takes you back to 'home'
@@ -184,10 +185,11 @@ pwd
 # ok, let's hop back again and stay, forgetting or past location
 popd
 pwd
+```
 
+#### Listing Files
 
-# Listing Files
-
+```bash
 ## Saw this command in action briefly earlier. Used for listing files in a directory
 ls
 # same as 
@@ -217,9 +219,9 @@ man ls
 <a name="working_with_files"></a>
 ### Working with Files and Directories
 
+#### Command format
+
 ```bash
-# COMMANDS FORMAT:
-#
 # mkdir [options] DIRNAME
 # rmdir [options] DIRNAME
 # cp [options] SOURCE [SOURCE] DESTINATION
@@ -231,9 +233,9 @@ man ls
 # less|more [options] [PATHNAME]
 ```
 
-```bash
-# Create Directories
+#### Create and delete directories
 
+```bash
 # create directories with mkdir (make directory)
 cd ~
 mkdir somedir
@@ -246,10 +248,11 @@ rmdir newdir
 # delete lower one first, then upper. Faster way later
 rmdir newdir/nodir
 rmdir newdir
+```
 
+# Copying Files and Directories
 
-# Copying Files
-
+```bash
 # copying (cp) and moving/renaming (mv) files
 #   this has the standard format of cp/mv source [source] destination
 #   if using multiple sources, the destination must be a directory
@@ -261,10 +264,11 @@ cp file1 file2 dir1/
 # copy the contents of a folder, or the whole folder & its contents recursively
 cp folder1/* dir1/
 cp -R folder1/ dir1/
+```
 
+#### Move / Rename Files
 
-# Move / Rename Files
-
+```bash
 # rename a file, just move it someplace else, or move & rename
 mv file1 file2
 mv file1 dir1/
@@ -272,10 +276,11 @@ mv file1 dir1/file2
 # move a folder, or a bunch of things
 mv folder1/ folder2/
 mv *.txt folder1/ textfiledir/
+```
 
+#### Delete Files
 
-# Delete Files
-
+```bash
 # let's delete stuff:
 #   remove one or more files
 rm file1
@@ -283,10 +288,11 @@ rm file1 file2
 # this will throw an error 
 rm folder1/
 rm -rf folder1/
+```
 
+#### Looking at File Contents
 
-# Looking at File Contents
-
+```bash
 # Show the contents of a file by concatenating (cat) it
 cat file1
 # concatenate multiple files by cat'ing them in sequences
@@ -315,16 +321,16 @@ less specific_order.txt
 <a name="finding"></a>
 ### Finding Things
 
+#### Command Format
+
 ```bash
-# COMMANDS FORMAT:
-#
 # grep [options] PATTERN [PATHNAME ...]
 # find [options] LOCATION DIRECTIVE
 ```
 
-```bash
-# Finding text inside files
+#### Finding text inside files
 
+```bash
 # finally, what everybody loves: searching inside files... with grep!
 #
 # let's download a sample file first, from Software Carpentry's Unix lesson
@@ -350,10 +356,11 @@ grep -n -w -v the !$
 grep -c The haiku.txt
 #  find it only at the start of hte line
 grep -E "^The" !$
+```
 
+#### Finding file themselves
 
-# Finding file themselves
-
+```bash
 # find all text files from current directory and below
 find . -name *.txt
 # repeat same, but ignore case of filenames
@@ -379,8 +386,9 @@ still be done locally -- it could be all on a local machine, local + remote, or 
 to remote! See our [Copying Files](http://grid.rcs.hbs.org/copying-files-0) document on
 our compute grid website.
 
+#### Command Format
+
 ```bash
-# Command Format:
 # scp [options] [username@host:]PATHNAME [username@host:]PATHNAME
 # rsync [options] [username@host:]PATHNAME [username@host:]PATHNAME
 ```
