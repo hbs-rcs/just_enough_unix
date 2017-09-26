@@ -82,7 +82,7 @@ Custom submission scripts are covered in more detail at http://grid.rcs.hbs.org/
 Managing jobs often requires either the job ID, which is reported to you when you submit
 the job with `bsub`, or using by job names or groups, though the latter is less common.
 
-#### Killing Jobs
+#### `bkill`: Killing Jobs
 ```bash
 # killing a particular job
 bkill JOB_ID
@@ -95,7 +95,7 @@ bkill -J JOB_NAME
 bkill 0
 ```
 
-#### Suspending/Resuming Jobs
+#### `bsusp` and `bresume`: Suspending and Resuming Jobs
 
 ```bash
 # suspend a particular job, my jobs in a given queue, with a given job name, or ALL jobs
