@@ -16,12 +16,12 @@ interactive and batch, that is done on the compute grid.
 Note: In the following sections, please know that where relevant, one can 
 select / filter jobs by the following:
 
--q QUEUE_NAME<br>
--s STATE<br>
--J JOB_NAME<br>
--g JOB_GROUP<br>
--m HOST_NAME<br>
--app APP_PROFILE<br>
+  `-q`: QUEUE_NAME<br>
+  `-s`: STATE<br>
+  `-J`: JOB_NAME<br>
+  `-g`: JOB_GROUP<br>
+  `-m`: HOST_NAME<br>
+`-app`: APP_PROFILE<br>
 
 
 <a name="job_submission"></a>
