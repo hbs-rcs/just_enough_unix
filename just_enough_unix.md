@@ -111,7 +111,7 @@ And, of course, if this turns up empty, there is always Google!
 <a name="navigating"></a>
 ### The Filesystem and Navigation
 
-#### Commands Format
+#### Commands format
 ```bash
 # cd DIRNAME
 # ls [options] PATHNAME
@@ -187,7 +187,7 @@ popd
 pwd
 ```
 
-#### Listing Files
+#### Listing files
 
 ```bash
 ## Saw this command in action briefly earlier. Used for listing files in a directory
@@ -250,7 +250,7 @@ rmdir newdir/nodir
 rmdir newdir
 ```
 
-# Copying Files and Directories
+#### Copying files and directories
 
 ```bash
 # copying (cp) and moving/renaming (mv) files
@@ -266,7 +266,7 @@ cp folder1/* dir1/
 cp -R folder1/ dir1/
 ```
 
-#### Move / Rename Files
+#### Move / rename files
 
 ```bash
 # rename a file, just move it someplace else, or move & rename
@@ -278,7 +278,7 @@ mv folder1/ folder2/
 mv *.txt folder1/ textfiledir/
 ```
 
-#### Delete Files
+#### Delete files
 
 ```bash
 # let's delete stuff:
@@ -290,7 +290,7 @@ rm folder1/
 rm -rf folder1/
 ```
 
-#### Looking at File Contents
+#### Looking at file contents
 
 ```bash
 # Show the contents of a file by concatenating (cat) it
@@ -321,7 +321,7 @@ less specific_order.txt
 <a name="finding"></a>
 ### Finding Things
 
-#### Command Format
+#### Command format
 
 ```bash
 # grep [options] PATTERN [PATHNAME ...]
@@ -386,7 +386,7 @@ still be done locally -- it could be all on a local machine, local + remote, or 
 to remote! See our [Copying Files](http://grid.rcs.hbs.org/copying-files-0) document on
 our compute grid website.
 
-#### Command Format
+#### Command format
 
 ```bash
 # scp [options] [username@host:]PATHNAME [username@host:]PATHNAME
@@ -522,7 +522,7 @@ export PS1="\[\033[1;36m\][\$(date +%T), \u@\h: \W]$\[\033[0m\] "
 <a name="further_study"></a>
 ### Things We Won't Hit (For Further Study)
 
-#### Miscellaneous Commands
+#### Miscellaneous commands
 ```bash
 wc -l   word count (lines)<br>
 |       chaining unix commands with piping<br>
@@ -533,7 +533,7 @@ $(cmd)  insert output from cmd in place<br>
 --version   see if command will tell you its version<br>
 ```
 
-#### Line Control and Navigation
+#### Line control and navigation
 ```bash
 Left and right arrow keys   Move the cursor left and right<br>
 Ctrl-d  Delete character under cursor<br>
@@ -544,7 +544,7 @@ Down arrow  Next command<br>
 Ctrl-k  Delete from cursor to the end of the line<br>
 ```
 
-#### Still Useful but Less Commonly Used Keystrokes
+#### Still useful but less commonly used keystrokes
 ```bash
 Ctrl-w  Delete to beginning of word<br>
 Ctrl-r  Search for most recent command containing<br>
@@ -552,7 +552,7 @@ Ctrl-xx Move between current cursor position and beginning of line<br>
 # You can combine these together. For instance a useful one is Ctrl-a Ctrl-k which goes to the beginning of the line and deletes it.<br>
 ```
 
-#### Command Control Shortcuts
+#### Command control shortcuts
 ```bash
 Ctrl-s  Stop the output to the screen<br>
 Ctrl-q  Continue the output to the screen<br>
@@ -561,7 +561,7 @@ Ctrl-z  Suspend the currently running command (follow by bg to push into the bac
 Ctrl-l  Clears the screen (Useful if your terminal fills up and becomes confusing<br>
 ```
 
-#### Command History
+#### Command history
 ```bash
 !!      Run last command<br>
 !mycmd  Run the most recent command that starts with mycmd (e.g. !cd)<br>
