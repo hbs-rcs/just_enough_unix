@@ -1,13 +1,9 @@
 ## LSF Commands
 
-Know that where relevant, one can select / filter jobs by the following:
+We provide a brief set of the most important commands one can use for working with 
+the LSF (Load Sharing Facility) scheduler, the software that manages all work, both 
+interactive and batch, that is done on the compute grid.
 
--q QUEUE_NAME<br>
--s STATE<br>
--J JOB_NAME<br>
--g JOB_GROUP<br>
--m HOST_NAME<br>
--app APP_PROFILE<br>
 
 ## TOC
 * [Wrappers vs Custom Job Submission](#intro)
@@ -17,8 +13,20 @@ Know that where relevant, one can select / filter jobs by the following:
 * [Useful LSF One Liners](#useful_commands)
 
 
+Note: In the following sections, please know that where relevant, one can 
+select / filter jobs by the following:
+
+-q QUEUE_NAME<br>
+-s STATE<br>
+-J JOB_NAME<br>
+-g JOB_GROUP<br>
+-m HOST_NAME<br>
+-app APP_PROFILE<br>
+
+
 <a name="job_submission"></a>
 ### Wrappers vs Custom Job Submission
+
 HBS compute grid uses scripts to facilitate easy job submission and compute grid utilization.
 These bash scripts take care of not only running the program you want, but also requesting the
 resources -- the amount of RAM and number of CPUs -- that your program needs to run.
@@ -27,6 +35,7 @@ While easy & convenient, this is inflexible. For maximum flexibility, you can wr
 submission scripts to run your jobs. The next section presents some examples.
 
 Default submission scripts are covered at http://grid.rcs.hbs.org/default-submission-scripts.
+
 
 <a name="custom_scripts"></a>
 ### Submitting a Job With Custom Scripts
@@ -73,9 +82,8 @@ Custom submission scripts are covered in more detail at http://grid.rcs.hbs.org/
 Managing jobs often requires either the job ID, which is reported to you when you submit
 the job with `bsub`, or using by job names or groups, though the latter is less common.
 
+#### Killing Jobs
 ```bash
-# Killing Jobs
-
 # killing a particular job
 bkill JOB_ID
 
@@ -85,10 +93,11 @@ bkill -J JOB_NAME
 
 # kill all jobs (for myself). period.
 bkill 0
+```
 
+#### Suspending/Resuming Jobs
 
-# Suspending/Resuming Jobs
-
+```bash
 # suspend a particular job, my jobs in a given queue, with a given job name, or ALL jobs
 bsusp JOB_ID
 bsusp -q QUEUE_NAME
@@ -101,6 +110,7 @@ bresume -q QUEUE_NAME
 bresume -J JOB_NAME
 ```
 
+
 <a name="job_info"></a>
 ### Information on Jobs
 
@@ -108,9 +118,9 @@ Use the bjobs, bhist, and bacct commands to get current and historical informati
 especially helpful to understand memory and CPU usage patterns, so that appropriate 
 values can be given when submitting future jobs.
 
+#### `bjobs`: Currently unfinished or < 1-hr finished
+
 ```bash
-# bjobs: Currently unfinished or < 1-hr finished
-# 
 # list my jobs, one job, for a queue, a job name, a job group, or everyone's jobs
 bjobs JOB_ID
 bjobs -q QUEUE_NAME
@@ -134,10 +144,11 @@ bjobs -r
 bjobs -sum
 # resource use info
 bjobs -W
+```
 
+#### `bhist`: Currently unfinished or past (anytime) finished/exited
 
-# bhist: Currently unfinished or past (anytime) finished/exited
-#
+```bash
 # simple & long format
 bhist JOB_ID
 bhist -l JOB_ID
@@ -149,10 +160,11 @@ bhist -a -S 2017/02         # only that month
 bhist -a -S 2017/02/06,2017/03/06   # the range
 bhist -a -S 2017/02/06,     # then to now
 bhist -a -S 2017/02/06, -l  # then to now, long format
+```
 
+#### `bacct`: Accounting (resource use) information on one or more jobs
 
-# bacct: accounting (resource use) information on one or more jobs
-# 
+```bash 
 # simple or will long (full) details
 bacct JOB_ID
 bacct -l 143971
@@ -200,7 +212,6 @@ bjobs -l -u all | grep -E "User|g>|IDLE|MAX"
 bhist -a -S 2017/09/01, -l | grep -E "User|g>|MAX"
 
 ## can format this more nicely using awk to piece out data from each line
-
 
 ```
 
